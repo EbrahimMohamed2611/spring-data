@@ -1,13 +1,13 @@
 name: deployment-workflow
 on: push
 jobs:
-  first-job:
+  output-workflow-object:
     runs-on: ubuntu-latest
     steps:
-      - name: print Job Description
-        run: echo "Execute Unit Tests"
+      - name: print github object
+        run: echo "${{toJSON(github)}}"
   test:
-    needs: first-job
+    needs: output-workflow-object
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -49,4 +49,4 @@ jobs:
       - name: Run Maven Test
         run: mvn clean install
       - name: build the prject
-        run: mvn build
+        run: mvn package
