@@ -1,0 +1,20 @@
+name: activity and filter configuration
+on:
+  push:
+    branches:
+      - main
+      - "release/*" # * mean any words expact slash /
+      - "feat/**" # ** means any combination of characters include slash /
+    paths-ignore:
+      - ".github/**"
+  pull_request:
+    types:
+      - opened
+      - closed
+# OR   pull_request: [opened, closed]
+jobs:
+  output_event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print event object
+        run: echo "${{toJSON(github.event)}}"

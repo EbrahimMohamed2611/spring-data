@@ -1,5 +1,5 @@
 name: deployment-workflow
-on: push
+on: workflow_dispatch
 jobs:
   output-workflow-object:
     runs-on: ubuntu-latest
