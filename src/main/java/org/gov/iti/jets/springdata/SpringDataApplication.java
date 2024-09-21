@@ -17,34 +17,36 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringDataApplication {
-//public class SpringDataApplication implements CommandLineRunner{
+    // public class SpringDataApplication implements CommandLineRunner{
 
-//    @Autowired
-//    private StudentIdCardRepository studentIdCardRepository;
-//    @Autowired
-//    private StudentRepository studentRepository;
+    // @Autowired
+    // private StudentIdCardRepository studentIdCardRepository;
+    // @Autowired
+    // private StudentRepository studentRepository;
 
     public static void main(String[] args) {
+        System.out.println("null");
         SpringApplication.run(SpringDataApplication.class, args);
     }
 
-
-//    @Override
-//    public void run(String... args) throws Exception {
-//        Faker faker = new Faker();
-//        List<StudentIdCard> studentIdCards = new ArrayList<>();
-//        for (int i = 0; i < 10; i++) {
-//            String firstName = faker.name().firstName();
-//            String lastName = faker.name().lastName();
-//
-//            studentIdCards.add(StudentIdCard.builder().student(Student.builder().firstName(firstName).lastName(lastName).email(String.format("%s.%s@elrouby.edu", firstName, lastName))
-//                            .age(faker.number().numberBetween(18, 56))
-//                            .build())
-//                    .cardNumber(UUID.randomUUID().toString()).build());
-//        }
-//        studentIdCardRepository.saveAll(studentIdCards);
-//        studentRepository.save(Student.builder().firstName("Ebrahim").lastName("Mohamed").email(String.format("%s.%s@elrouby.edu", "Ebrahim", "Mohamed"))
-//                .age(faker.number().numberBetween(18, 56))
-//                .build());
-//    }
+    // @Override
+    // public void run(String... args) throws Exception {
+    // Faker faker = new Faker();
+    // List<StudentIdCard> studentIdCards = new ArrayList<>();
+    // for (int i = 0; i < 10; i++) {
+    // String firstName = faker.name().firstName();
+    // String lastName = faker.name().lastName();
+    //
+    // studentIdCards.add(StudentIdCard.builder().student(Student.builder().firstName(firstName).lastName(lastName).email(String.format("%s.%s@elrouby.edu",
+    // firstName, lastName))
+    // .age(faker.number().numberBetween(18, 56))
+    // .build())
+    // .cardNumber(UUID.randomUUID().toString()).build());
+    // }
+    // studentIdCardRepository.saveAll(studentIdCards);
+    // studentRepository.save(Student.builder().firstName("Ebrahim").lastName("Mohamed").email(String.format("%s.%s@elrouby.edu",
+    // "Ebrahim", "Mohamed"))
+    // .age(faker.number().numberBetween(18, 56))
+    // .build());
+    // }
 }
