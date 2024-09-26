@@ -5,7 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class SpringDataApplicationTests {
-
+    // comment
     @Test
     void contextLoads() {
         // This is new comment
