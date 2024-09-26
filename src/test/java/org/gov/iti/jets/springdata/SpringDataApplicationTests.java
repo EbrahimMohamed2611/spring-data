@@ -8,7 +8,7 @@ class SpringDataApplicationTests {
 
     @Test
     void contextLoads() {
-        // This is comment
+        // This is new comment
     }
 
 }
