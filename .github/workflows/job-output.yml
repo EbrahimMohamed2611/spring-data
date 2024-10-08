@@ -1,13 +1,10 @@
-name: upload-artifacts
-on: workflow_dispatch
+name: job-output
+on: push
 jobs:
-  first-job:
+  build-job:
     runs-on: ubuntu-latest
-    steps:
-      - name: print Job Description
-        run: echo "We will upload the artifact"
-  test:
-    runs-on: ubuntu-latest
+    outputs:
+      jar-file: ${{steps.publish-jar-file.outputs.jarFile}}
     steps:
       - name: Get Code
         uses: actions/checkout@v4
@@ -31,3 +28,12 @@ jobs:
         with:
           name: spring-artifact-jar
           path: target/*.jar
+      - name: publish JAR fileName
+        id: publish-jar-file
+        run: find target/*jar -type f -execdir echo '::set-output name=jarFile::{}' ';'
+  deploy:
+    needs: build-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: print The file name
+        run: echo ${{needs.build-job.outputs.jar-file}}
