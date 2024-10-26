@@ -8,8 +8,11 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: print Job Description
-        run: echo "Execute Unit Tests"
+      - name: print All Environments
+        run: |
+          echo "Database Name: ${{ env.DATABASE_NAME }} "
+          echo "Username: ${{env.DATABASE_USERNAME}} "
+          echo "Password: $DATABASE_PASSWORD"
   test:
     runs-on: ubuntu-latest
     steps:
