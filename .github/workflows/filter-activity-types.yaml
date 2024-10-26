@@ -2,9 +2,9 @@ name: activity and filter configuration
 on:
   push:
     branches:
-      - main
-      - "release/*" # * mean any words expact slash /
-      - "feat/**" # ** means any combination of characters include slash /
+      - main2
+      - "release2/*" # * mean any words expact slash /
+      - "feat2/**" # ** means any combination of characters include slash /
     paths-ignore:
       - ".github/**"
   pull_request:
