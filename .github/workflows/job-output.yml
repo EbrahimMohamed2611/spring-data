@@ -1,5 +1,5 @@
 name: job-output
-on: push
+on: workflow_dispatch
 jobs:
   build-job:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
       - name: publish JAR fileName
         id: publish-jar-file
         # run: find target/*jar -type f -execdir echo '::set-output name=jarFile::{}' ';' # Old way
-        run: find target/*jar -type f -execdir echo 'jarFile={}' >> $GITHUB_OUTPUT ';' # Old way
+        run: find target/*jar -type f -execdir echo 'jarFile={}' >> $GITHUB_OUTPUT ';' # New way
   deploy:
     needs: build-job
     runs-on: ubuntu-latest
