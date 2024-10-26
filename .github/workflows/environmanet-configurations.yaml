@@ -32,4 +32,4 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: Run Maven Test
-        run: mvn clean install
+        run: mvn clean package
