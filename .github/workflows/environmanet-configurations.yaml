@@ -6,7 +6,7 @@ env:
   DATABASE_NAME: books
 jobs:
   first-job:
-    environment: testing
+    environment: testing # This for environment on github
     runs-on: ubuntu-latest
     steps:
       - name: print All Environments
