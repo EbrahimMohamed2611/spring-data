@@ -1,11 +1,12 @@
 name: test-workflow
 on: push
 env:
-  DATABASE_USERNAME: ebrahim
-  DATABASE_PASSWORD: 8t08IjPD2b5sOlnr
-  DATABASE_NAME: books
+  DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+  DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+  # DATABASE_NAME: ${{env.DATABASE_NAME}}
 jobs:
   first-job:
+    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: print All Environments
