@@ -3,7 +3,7 @@ on: push
 env:
   DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
   DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-  # DATABASE_NAME: ${{env.DATABASE_NAME}}
+  DATABASE_NAME: books
 jobs:
   first-job:
     environment: testing
