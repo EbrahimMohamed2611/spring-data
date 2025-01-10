@@ -3,22 +3,15 @@ on:
   push:
     branches:
       - "section/*" # * mean any words expact slash /
-
 jobs:
-  greeting:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Greeting
-        run: echo "Hello, World!"
   test:
-    continue-on-error: true
+    # continue-on-error: true
     strategy:
       matrix:
         java-version: [8, 11]
         distribution: ["temurin", "adopt"]
         architecture: [x64, x86]
         operating-system: [ubuntu-latest, windows-latest, macos-latest]
-
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Get Code
