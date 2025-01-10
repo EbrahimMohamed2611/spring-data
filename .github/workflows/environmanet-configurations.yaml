@@ -1,5 +1,5 @@
 name: test-workflow
-on: push
+on: workflow_dispatch
 env:
   DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
   DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}

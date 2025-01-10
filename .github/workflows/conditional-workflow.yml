@@ -6,7 +6,7 @@ on:
 
 jobs:
   greeting:
-    runs-on: ubtunu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Greeting
         run: echo "Hello, World!"
