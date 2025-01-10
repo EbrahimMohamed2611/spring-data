@@ -29,7 +29,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: Run Maven Test
+        id: test
         run: mvn clean test
+      - name: Report Step
+        if: failure() && steps.test.outcome == 'failure'
+        run: echo "The test failed"
 
   build:
     needs: [test]
