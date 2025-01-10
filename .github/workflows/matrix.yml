@@ -12,6 +12,17 @@ jobs:
         distribution: ["temurin", "adopt"]
         architecture: [x64, x86]
         operating-system: [ubuntu-latest, windows-latest, macos-latest]
+        exclude:
+          - java-version: 8
+            distribution: adopt
+            architecture: x86
+            operating-system: windows-latest
+          - java-version: 11
+            distribution: adopt
+            architecture: x86
+            operating-system: windows-latest
+        include:
+          - java-version: 21
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Get Code
