@@ -2,9 +2,7 @@ name: condition-artifacts
 on:
   push:
     branches:
-      - main
-      - "release/*" # * mean any words expact slash /
-      - "feat/**" # ** means any combination of characters include slash /
+      - "section/*" # * mean any words expact slash /
     paths-ignore:
       - ".github/**"
 jobs:
