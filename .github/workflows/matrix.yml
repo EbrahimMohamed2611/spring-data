@@ -14,13 +14,13 @@ jobs:
         operating-system: [ubuntu-latest, windows-latest, macos-latest]
         exclude:
           - java-version: 8
-            distribution: adopt
-            architecture: x86
-            operating-system: windows-latest
-          - java-version: 11
-            distribution: adopt
-            architecture: x86
-            operating-system: windows-latest
+        #     distribution: adopt
+        #     architecture: x86
+        #     operating-system: windows-latest
+        #   - java-version: 11
+        #     distribution: adopt
+        #     architecture: x86
+        #     operating-system: windows-latest
         include:
           - java-version: 21
             distribution: adopt
