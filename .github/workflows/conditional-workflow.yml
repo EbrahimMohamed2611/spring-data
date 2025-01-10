@@ -2,7 +2,7 @@ name: condition-artifacts
 on:
   push:
     branches:
-      - "section/*" # * mean any words expact slash /
+      - "sections/*" # * mean any words expact slash /
 
 jobs:
   greeting:

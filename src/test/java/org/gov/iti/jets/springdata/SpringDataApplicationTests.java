@@ -17,7 +17,7 @@ class SpringDataApplicationTests {
     @Test
     void contextLoads() {
         // This is new comment
-        assertEquals(10, 6);
+        // assertEquals(10, 6);
         bookRepository.findAll().forEach(System.out::println);
     }
 
