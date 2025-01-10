@@ -3,9 +3,13 @@ on:
   push:
     branches:
       - "section/*" # * mean any words expact slash /
-    paths-ignore:
-      - ".github/**"
+
 jobs:
+  greeting:
+    runs-on: ubtunu-latest
+    steps:
+      - name: Greeting
+        run: echo "Hello, World!"
   test:
     runs-on: ubuntu-latest
     steps:
@@ -50,29 +54,11 @@ jobs:
         run: mvn clean install
 
   report:
-    needs: [build]
+    needs: [build, greeting]
     if: failure()
     runs-on: ubuntu-latest
     steps:
-      - name: Get Code
-        uses: actions/checkout@v4
-      - name: Set up JDK 11 for x64
-        uses: actions/setup-java@v4
-        with:
-          java-version: "11"
-          distribution: "temurin"
-          architecture: x64
-      - name: Cache Maven dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-      - name: Run Maven Package
-        run: mvn clean package
-      - name: upload-artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: spring-artifact-jar
-          path: target/*.jar
+      - name: Output Information
+        run: |
+          echo "The build failed"
+          echo "${{ toJson(github)}}"
