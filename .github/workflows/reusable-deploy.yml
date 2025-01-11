@@ -5,7 +5,7 @@ on:
       - "section/*" # * mean any words expact slash /
 jobs:
   test:
-    name: Run Tests
+    # name: Run Tests
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
