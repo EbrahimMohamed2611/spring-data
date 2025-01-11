@@ -1,8 +1,5 @@
 name: Reuse Workflow
-on:
-  push:
-    branches:
-      - "section/*" # * mean any words expact slash /
+on: workflow_call
 jobs:
   deploy:
     runs-on: ubuntu-latest

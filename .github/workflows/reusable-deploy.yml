@@ -1,5 +1,8 @@
 name: Reusable Workflow
-on: workflow_call
+on:
+  push:
+    branches:
+      - "section/*" # * mean any words expact slash /
 jobs:
   test:
     runs-on: ubuntu-latest
