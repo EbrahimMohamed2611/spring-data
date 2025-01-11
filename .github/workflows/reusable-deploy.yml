@@ -23,4 +23,4 @@ jobs:
         run: mvn clean test
   deploy:
     needs: [test]
-    uses: ./.github/workflow.reusable-deploy.yml
+    uses: ./.github/workflows/reusable-deploy.yml
