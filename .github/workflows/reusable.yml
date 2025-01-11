@@ -5,5 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploy the artifact
-        runs: echo "Deploying....."
-
+        run: echo "Deploying....."
