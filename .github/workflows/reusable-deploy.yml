@@ -26,4 +26,4 @@ jobs:
         id: test
         run: mvn clean test
   deploy:
-    uses: ./.github/workflows/reusable.yml
+    uses: ./reusable.yml
