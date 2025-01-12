@@ -3,10 +3,6 @@ on:
   push:
     branches:
       - "section/*" # * mean any words expact slash /
-env:
-  DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
-  DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-  DATABASE_NAME: books
 jobs:
   test:
     # name: Run Tests
