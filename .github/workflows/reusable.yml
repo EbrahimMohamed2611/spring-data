@@ -7,12 +7,18 @@ on:
         required: false
         default: dist
         type: string
+    outputs:
+      result-value:
+        description: the return value from the job
+        value: ${{jobs.deploy.outputs.returned-value}}
     secrets:
       DATABASE_PASSWORD:
           required: false
           description: database password
 jobs:
   deploy:
+    outputs:
+      returend-value: ${{ steps.deploy-id.outputs.step-result }}
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -22,7 +28,8 @@ jobs:
       - name: List all files
         run: ls
       - name: deploy the artifact
-        run: echo "Deploying....."
+        id: deploy-id
+        run: echo 'step-result=Deploying' >> $GITHUB_OUTPUT ';'
       - name: use the secret with fallback mechanism
         run: |
           DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD || '123456' }}
