@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - "section/*" # * mean any words expact slash /
+env:
+  DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+  DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+  DATABASE_NAME: books
 jobs:
   test:
     # name: Run Tests
@@ -33,6 +37,7 @@ jobs:
           name: spring-artifact-jar
           path: target/*.jar
   deploy:
+    needs: test
     uses: ./.github/workflows/reusable.yml
     with:
       artifact-name: spring-artifact-jar
