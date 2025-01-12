@@ -7,6 +7,10 @@ on:
         required: false
         default: dist
         type: string
+    secrets:
+      DATABASE_PASSWORD:
+          required: false
+          description: database password
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,3 +23,11 @@ jobs:
         run: ls
       - name: deploy the artifact
         run: echo "Deploying....."
+      - name: use the secret with fallback mechanism
+        run: |
+          DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD || '123456' }}
+          echo "Using token: $DATABASE_PASSWORD"
+
+
+
+

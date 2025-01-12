@@ -37,3 +37,5 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       artifact-name: spring-artifact-jar
+#    secrets:
+#      DATABASE_PASSWORD: ${{secrets.DB}}
