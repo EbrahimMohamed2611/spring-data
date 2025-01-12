@@ -25,5 +25,14 @@ jobs:
       - name: Run Maven Test
         id: test
         run: mvn clean test
+      - name: Run Maven Package
+        run: mvn clean package
+      - name: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: spring-artifact-jar
+          path: target/*.jar
   deploy:
-    uses: ./reusable.yml
+    uses: ./.github/workflows/reusable.yml
+    with:
+      artifact-name: spring-artifact-jar
