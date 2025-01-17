@@ -6,7 +6,7 @@ on:
 env:
   DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
   DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-  DATABASE_NAME: books
+  DATABASE_NAME: ${{env.DATABASE_NAME}}
 jobs:
   first-job:
     environment: testing # This for environment on github
