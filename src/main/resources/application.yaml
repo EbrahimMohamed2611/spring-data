@@ -21,7 +21,7 @@ server:
 spring:
   data:
     mongodb:
-      uri: "mongodb://${DATABASE_USERNAME}:${DATABASE_PASSWORD}/?ssl=true&replicaSet=atlas-63flsd-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0"
+      uri: "mongodb+srv://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@cluster0.qjsff.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
       database: ${DATABASE_NAME} # books
 #      mongodb://ebrahim:<db_password>@<hostname>/?ssl=true&replicaSet=atlas-63flsd-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0
 #  mongodb+srv://ebrahim:8t08IjPD2b5sOlnr@cluster0.qjsff.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
