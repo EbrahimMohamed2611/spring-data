@@ -2,7 +2,7 @@ name: Reusable Workflow
 on:
   push:
     branches:
-      - "section/*" # * mean any words expact slash /
+      - "section__/*" # * mean any words expact slash /
 jobs:
   test:
     # name: Run Tests
