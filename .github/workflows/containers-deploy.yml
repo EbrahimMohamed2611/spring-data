@@ -11,8 +11,6 @@ jobs:
   first-job:
     environment: testing # This for environment on github
     runs-on: ubuntu-latest
-    container:
-      image: maven:3.6.3-openjdk-17
     steps:
       - name: print All Environments
         run: |
@@ -20,6 +18,8 @@ jobs:
           echo "Username: ${{env.DATABASE_USERNAME}} "
           echo "Password: $DATABASE_PASSWORD"
   test:
+    container:
+      image: maven:3.6.3-openjdk-17
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
