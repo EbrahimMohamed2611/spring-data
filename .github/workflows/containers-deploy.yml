@@ -9,10 +9,10 @@ env:
   DATABASE_NAME: books
 jobs:
   first-job:
-    container:
-      image: maven:3.6.3-openjdk-17
     environment: testing # This for environment on github
     runs-on: ubuntu-latest
+    container:
+      image: maven:3.6.3-openjdk-17
     steps:
       - name: print All Environments
         run: |
