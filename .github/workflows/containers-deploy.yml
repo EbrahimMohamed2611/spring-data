@@ -4,9 +4,14 @@ on:
     branches:
       - "section/*" # * mean any words expect slash /
 env:
-  DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
-  DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+#  DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+  DATABASE_USERNAME: root
+  DATABASE_PASSWORD: example
+#  DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
   DATABASE_NAME: books
+  DATABASE_HOST_NAME: mangodb
+  DATABASE_PROTOCOL: mongodb
+#  DATABASE_PROTOCOL: mongodb+srv
 jobs:
   first-job:
     environment: testing # This for environment on github
@@ -16,11 +21,19 @@ jobs:
         run: |
           echo "Database Name: ${{ env.DATABASE_NAME }} "
           echo "Username: ${{env.DATABASE_USERNAME}} "
-          echo "Password: $DATABASE_PASSWORD"
+          echo "Password: {{env.DATABASE_PASSWORD}} "
   test:
     container:
       image: maven:3.6.3-openjdk-17
     runs-on: ubuntu-latest
+    services:
+      mangodb:
+        image: mongo
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
+        ports:
+          - 27017:27017
     steps:
       - name: Get Code
         uses: actions/checkout@v4
