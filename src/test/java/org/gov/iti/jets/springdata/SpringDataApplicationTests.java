@@ -19,6 +19,7 @@ class SpringDataApplicationTests {
     // comment 2
     @Test
     void contextLoads() {
+        bookRepository.deleteAll();
         bookRepository.saveAll(List.of(
                 Book.builder().bookName("Java EE").author("Ebrahim").build(),
                 Book.builder().bookName("Hibernate").author("JavaBrains").build(),
