@@ -7,7 +7,7 @@ env:
   DATABASE_USERNAME: root
   DATABASE_PASSWORD: example
   DATABASE_NAME: books
-  DATABASE_HOST_NAME: books
+  DATABASE_HOST_NAME: localhost
   DATABASE_PROTOCOL: mongodb
 jobs:
   test:
