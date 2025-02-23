@@ -1,21 +1,18 @@
 package org.gov.iti.jets.springdata;
 
+import lombok.RequiredArgsConstructor;
 import org.gov.iti.jets.springdata.models.Book;
 import org.gov.iti.jets.springdata.repositories.BookRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.List;
-//
-
 @SpringBootApplication
-// public class SpringDataApplication {
+@RequiredArgsConstructor
 public class SpringDataApplication implements CommandLineRunner {
 
-    @Autowired
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringDataApplication.class, args);
@@ -29,6 +26,5 @@ public class SpringDataApplication implements CommandLineRunner {
                 Book.builder().bookName("Maven").author("Hamza").build(),
                 Book.builder().bookName("JPA").author("Hamada").build()));
         bookRepository.findAll().forEach(System.out::println);
-
     }
 }
