@@ -1,5 +1,8 @@
 name: deployment-workflow
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - "section/*" # * mean any words expect slash /
 jobs:
   output-workflow-object:
     runs-on: ubuntu-latest
