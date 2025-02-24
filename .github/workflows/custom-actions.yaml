@@ -22,7 +22,7 @@ jobs:
           distribution: "temurin"
           architecture: x64
       - name: Cache or not the dependencies
-        uses: './github/actions/cached-deps'
+        uses: './.github/actions/cached-deps'
         id: cached-deps
         with:
           caching: 'false'
