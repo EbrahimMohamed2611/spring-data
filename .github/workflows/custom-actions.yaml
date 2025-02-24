@@ -24,8 +24,8 @@ jobs:
       - name: Cache or not the dependencies
         uses: './.github/actions/cached-deps'
         id: cached-deps
-#        with:
-#          caching: 'false'
+        with:
+          caching: 'true'
       - name: Output the returning from the custom action
         run: echo "Cached used? ${{ steps.cached-deps.outputs.used_cache}}"
 
