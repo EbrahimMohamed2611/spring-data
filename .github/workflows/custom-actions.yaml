@@ -27,7 +27,7 @@ jobs:
         with:
           caching: 'false'
       - name: Output the returning from the custom action
-        run: echo "Cached used? ${{ steps.cached-deps.outputs.used-cache}}"
+        run: echo "Cached used? ${{ steps.cached-deps.outputs.used_cache}}"
 
   deploy:
     needs: test
