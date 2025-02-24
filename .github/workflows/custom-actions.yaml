@@ -21,15 +21,14 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           architecture: x64
-      - name: Cache Maven dependencies
-        uses: actions/cache@v4
+      - name: Cache or not the dependencies
+        uses: './github/actions/cached-deps'
+        id: cached-deps
         with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-      - name: Run Maven Test
-        run: mvn clean install
+          caching: 'false'
+      - name: Output the returning from the custom action
+        run: echo "Cached used? ${{ steps.cached-deps.outputs.used-cache}}"
+
   deploy:
     needs: test
     runs-on: ubuntu-latest
